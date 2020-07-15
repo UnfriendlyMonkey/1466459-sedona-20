@@ -1,7 +1,7 @@
 # Личный проект «Седона» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Андрей Середа](https://up.htmlacademy.ru/adaptive/20/user/1466459).
-* Наставник: `Неизвестно`.
+* Наставник: [Натали Белоева](https://htmlacademy.ru/profile/id1123699).
 
 ---
 
