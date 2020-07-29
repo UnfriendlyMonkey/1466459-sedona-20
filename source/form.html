@@ -6,7 +6,7 @@
   </head>
   <body class="page__body">
     <header class="page-header">
-      <a class="page-header__logo">
+      <a class="page-header__logo" href="index.html">
         <img src="img/logotype-mobile.svg" width="101.7" height="84" alt="City of Sedona">
       </a>
       <nav class="main-nav">
@@ -15,8 +15,8 @@
         </button>
         <div class="main-nav__wrapper">
           <ul class="nain-nav__list site-list">
-            <li class="site-list__item site-list__item--active">
-              <a>
+            <li class="site-list__item">
+              <a href="index.html">
                 Главная
               </a>
             </li>
@@ -25,8 +25,8 @@
                 Фото и видео
               </a>
             </li>
-            <li class="site-list__item">
-              <a href="form.html">
+            <li class="site-list__item site-list__item--active">
+              <a>
                 Форма отзыва
               </a>
             </li>
@@ -41,70 +41,83 @@
     </header>
 
     <main class="page-main">
-      <h1 class="visually-hidden">Добро пожаловать в восхитительную Седону!</h1>
-      <section class="motto">
-        <img class="motto__eng" src="img/motto-en.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona!">
+      <h1 class="visually-hidden">Расскажите о вашем пребывании в восхитительной Седоне!</h1>
+      <section class="intro">
+        <img class="intro__picture" src="img/sedona.svg" width="229" height="39" alt="Welcome to Sedona!">
+        <h2 class="intro__headline">Оставьте свой отзыв</h2>
+        <p class="intro__description">Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных Вами достопримечательностях</p>
       </section>
 
-      <section class="advantage">
-        <header class="advantage__header">
-          <h2 class="visually-hidden">Преимущества Седоны</h2>
-          <p class="advantage__motto">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
-          <p class="advantage__intro">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
-        </header>
-        <ul class="advantage__list">
-          <li class="advantage__item advantage__item__blue">
-            <h3 class="advantage__title">Настоящий городок</h3>
-            <span class="advantage__number">— №1 —</span>
-            <p class="advantage__description">Седона не аттракцион для туристов, там течет своя жизнь</p>
-            <img class="advantage__image" src="img/photo-city-1-mob.jpg" width="520" height="260" alt="Фотография улицы города Седона">
-          </li>
-          <ul class="advantage__pics">
-            <li class="advantage__pics__item advantage__pics__item__housing">
-              <h3 class="advantage__title advantage__pics__title">Жилье</h3>
-              <p class="advantage__description advantage__pics__description">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-            </li>
-            <li class="advantage__pics__item advantage__pics__item__souvenirs">
-              <h3 class="advantage__title advantage__pics__title">Сувениры</h3>
-              <p class="advantage__description advantage__pics__description">Не только китайского, но и местного производства!</p>
-            </li>
-            <li class="advantage__pics__item advantage__pics__item__food">
-              <h3 class="advantage__title advantage__pics__title">Еда</h3>
-              <p class="advantage__description advantage__pics__description">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-            </li>
-          </ul>
-          <li class="advantage__item advantage__item__blue">
-            <h3 class="advantage__title">Там есть Мост дьявола</h3>
-            <span class="advantage__number">— №2 —</span>
-            <p class="advantage__description">Да, по нему можно пройти! Если Вы осмелитесь, конечно</p>
-            <img class="advantage__image" src="img/photo-city-1-mob.jpg" width="520" height="260" alt="Фотография моста дьявола">
-          </li>
-          <div class="grey-news-wrapper">
-            <li class="advantage__item advantage__item__grey">
-              <h3 class="advantage__title">Небольшая площадь</h3>
-              <span class="advantage__number">— №3 —</span>
-              <p class="advantage__description">Все интересные места находятся очень близко</p>
-            </li>
-            <li class="advantage__item advantage__item__grey">
-              <h3 class="advantage__title">Красивая дорога</h3>
-              <span class="advantage__number">— №4 —</span>
-              <p class="advantage__description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-            </li>
-            <li class="advantage__item advantage__item__grey">
-              <h3 class="advantage__title">Мало туристов</h3>
-              <span class="advantage__number">— №5 —</span>
-              <p class="advantage__description">Большинство едет в Гранд Каньон и толпится там</p>
-            </li>
-          </div>
-        </ul>
-      </section>
+      <form class="review" action="https://echo.htmlacademy.ru/courses" method="get">
+        <fieldset class="introduce">
+          <legend class="introduce__legend">Представьтесь:</legend>
+            <label class="introduce__name">
+              <span class="introduce__description">Имя*:</span>
+              <input class="introduce__input" type="text" name="name" required>
+            </label>
+            <label class="introduce__surname">
+              <span class="introduce__description">Фамилия*:</span>
+              <input class="introduce__input" type="text" name="name" required>
+            </label>
+            <label class="introduce__father">
+              <span class="introduce__description">Отчество:</span>
+              <input class="introduce__input" type="text" name="name">
+            </label>
+        </fieldset>
+        <fieldset class="contactinfo">
+          <legend class="contactinfo__legend">Контактная информация:</legend>
+            <label class="contactinfo__phone">
+              <span class="contactinfo__description">Контактный телефон*:</span>
+              <input class="contactinfo__input" type="tel" name="name" required placeholder="Введите телефон">
+              <button class="contactinfo__button" type="button">Трубка</button>
+            </label>
+            <label class="contactinfo__email">
+              <span class="contactinfo__description">Электронная почта*:</span>
+              <input class="contactinfo__input" type="email" name="name" required placeholder="Введите e-mail">
+              <button class="contactinfo__button" type="button">Конверт</button>
+            </label>
+        </fieldset>
+        <fieldset class="impression">
+          <legend class="impression__legend">Ваше общее впечатление:</legend>
+            <label class="impression__ok">
+              <input class="impression__radio" type="radio" name="impression" value="ok" checked>
+              <span class="impression__info">Скорее положительное</span>
+            </label>
+            <label class="impression__no">
+              <input class="impression__radio" type="radio" name="impression" value="no">
+              <span class="impression__info">Скорее отрицательное</span>
+            </label>
+            <label class="impression__dn">
+              <input class="impression__radio" type="radio" name="impression" value="dn">
+              <span class="impression__info">Затрудняюсь ответить</span>
+            </label>
+        </fieldset>
+        <fieldset class="visited">
+          <legend class="visited__legend">Посещенные достопримечательности:</legend>
+            <label class="visited__bridge">
+              <input class="visited__check" type="checkbox" name="bridge" value="bridge" checked>
+              <span class="visited__info">Мост Дьявола</span>
+            </label>
+            <label class="visited__bell">
+              <input class="visited__check" type="checkbox" name="bell" value="bell" checked>
+              <span class="visited__info">Гора-Колокол</span>
+            </label>
+            <label class="visited__park">
+              <input class="visited__check" type="checkbox" name="park" value="park" checked>
+              <span class="visited__info">Слайд-парк</span>
+            </label>
+            <label class="visited__rocks">
+              <input class="visited__check" type="checkbox" name="rocks" value="rocks">
+              <span class="visited__info">Красные скалы</span>
+            </label>
+        </fieldset>
+        <fieldset class="details">
+          <legend class="details__legend">Опишите свои эмоции:</legend>
+            <textarea class="details__text" name="impressions">Опишите подробно все свои восторги</textarea>
+        </fieldset>
+        <button class="review__button button blue-button" type="submit">Отправить отзыв</button>
+      </form>
 
-      <section class="interested">
-        <h3 class="interested__intro">Заинтересовались?</h3>
-        <p class="interested__proposal">укажите предполагаемые даты поездки, и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
-        <button class="interested__find button button__blue">Найти гостиницу</button>
-      </section>
-      <img class="map-mobile" src="img/map-mobile.png" width="320" height="350" alt="Карта местности вокруг Седоны">
     </main>
 
     <footer class="page-footer">
