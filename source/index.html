@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
   </head>
-  <body class="page__body">
+  <body class="page-body">
     <header class="page-header">
       <a class="page-header__logo">
         <img src="img/logotype-mobile.svg" width="101" height="84" alt="City of Sedona">
@@ -14,24 +14,24 @@
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="main-nav__wrapper">
-          <ul class="nain-nav__list site-list">
-            <li class="site-list__item site-list__item--active">
-              <a>
+          <ul class="main-nav__list site-list">
+            <li>
+              <a class="site-list__link site-list__link--active">
                 Главная
               </a>
             </li>
-            <li class="site-list__item">
-              <a href="foto.html">
+            <li>
+              <a class="site-list__link" href="photo.html">
                 Фото и видео
               </a>
             </li>
-            <li class="site-list__item">
-              <a href="form.html">
+            <li>
+              <a class="site-list__link" href="form.html">
                 Форма отзыва
               </a>
             </li>
-            <li class="site-list__item">
-              <a href="#">
+            <li>
+              <a class="site-list__link" href="https://htmlacademy.ru/intensive/adaptive">
                 HTML Academy
               </a>
             </li>
@@ -42,75 +42,77 @@
 
     <main class="page-main">
       <h1 class="visually-hidden">Добро пожаловать в восхитительную Седону!</h1>
-      <div class="motto">
-        <img class="motto__eng" src="img/motto-en.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona!">
-      </div>
+      <section class="intro">
+        <img class="intro__picture" src="img/motto-en.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona!">
+        <h2 class="intro__headline">Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
+        <p class="intro__description">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
+      </section>
 
       <section class="advantage">
-        <header class="advantage__header">
-          <h2 class="visually-hidden">Преимущества Седоны</h2>
-          <p class="advantage__motto">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
-          <p class="advantage__intro">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
-        </header>
-        <ul class="advantage__list">
-          <li class="advantage__item advantage__item__blue">
+        <h2 class="visually-hidden">Преимущества Седоны</h2>
+        <ol class="advantage__list">
+          <li class="advantage__item advantage__item--blue">
             <h3 class="advantage__title">Настоящий городок</h3>
             <span class="advantage__number">— №1 —</span>
             <p class="advantage__description">Седона не аттракцион для туристов, там течет своя жизнь</p>
             <img class="advantage__image" src="img/photo-city-1-mob.jpg" width="520" height="260" alt="Фотография улицы города Седона">
+            <ul class="advantage__pics-list">
+              <li class="advantage__pics-item advantage__pics-item--housing">
+                <h3 class="advantage__title">Жилье</h3>
+                <p class="advantage__description">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+              </li>
+              <li class="advantage__pics-item advantage__pics-item--souvenirs">
+                <h3 class="advantage__title">Сувениры</h3>
+                <p class="advantage__description">Не только китайского, но и местного производства!</p>
+              </li>
+              <li class="advantage__pics-item advantage__pics-item--food">
+                <h3 class="advantage__title">Еда</h3>
+                <p class="advantage__description">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              </li>
+            </ul>
           </li>
-          <li class="advantage__pics__item advantage__pics__item__housing">
-            <h3 class="advantage__title advantage__pics__title">Жилье</h3>
-            <p class="advantage__description advantage__pics__description">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-          </li>
-          <li class="advantage__pics__item advantage__pics__item__souvenirs">
-            <h3 class="advantage__title advantage__pics__title">Сувениры</h3>
-            <p class="advantage__description advantage__pics__description">Не только китайского, но и местного производства!</p>
-          </li>
-          <li class="advantage__pics__item advantage__pics__item__food">
-            <h3 class="advantage__title advantage__pics__title">Еда</h3>
-            <p class="advantage__description advantage__pics__description">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-          </li>
-          <li class="advantage__item advantage__item__blue">
+          <li class="advantage__item advantage__item--blue">
             <h3 class="advantage__title">Там есть Мост дьявола</h3>
             <span class="advantage__number">— №2 —</span>
             <p class="advantage__description">Да, по нему можно пройти! Если Вы осмелитесь, конечно</p>
             <img class="advantage__image" src="img/photo-city-1-mob.jpg" width="520" height="260" alt="Фотография моста дьявола">
           </li>
-          <li class="advantage__item advantage__item__grey">
+          <li class="advantage__item advantage__item--grey">
             <h3 class="advantage__title">Небольшая площадь</h3>
             <span class="advantage__number">— №3 —</span>
             <p class="advantage__description">Все интересные места находятся очень близко</p>
           </li>
-          <li class="advantage__item advantage__item__grey">
+          <li class="advantage__item advantage__item--grey">
             <h3 class="advantage__title">Красивая дорога</h3>
             <span class="advantage__number">— №4 —</span>
             <p class="advantage__description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
-          <li class="advantage__item advantage__item__grey">
+          <li class="advantage__item advantage__item--grey">
             <h3 class="advantage__title">Мало туристов</h3>
             <span class="advantage__number">— №5 —</span>
             <p class="advantage__description">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
-        </ul>
+        </ol>
       </section>
 
       <section class="interested">
         <h3 class="interested__intro">Заинтересовались?</h3>
         <p class="interested__proposal">укажите предполагаемые даты поездки, и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
-        <button class="interested__find button button__blue">Найти гостиницу</button>
+        <button class="interested__find button">Найти гостиницу</button>
       </section>
       <img class="map-mobile" src="img/map-mobile.png" width="320" height="350" alt="Карта местности вокруг Седоны">
     </main>
 
     <footer class="page-footer">
-      <a class="hashteg" href="#visitsedona">#visitsedona</a>
+      <p>
+        <a class="hashteg" href="#visitsedona">#visitsedona</a>
+      </p>
 
       <div class="social-media">
         <h4 class="visually-hidden">Социальные сети</h4>
         <ul class="social-media__list">
           <li>
-            <a class="social-media__button button blue-button" href="#">
+            <a class="social-media__button" href="#">
             <span class="visually-hidden">Twitter</span>
             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.95 1.14403C12.635 0.648028 13.934 1.41403 14.527 2.32303C15.2 2.09203 15.858 1.84203 16.538 1.61503C16.5249 2.30139 16.2117 2.94755 15.681 3.38303C16.366 3.55303 16.985 2.89203 16.985 2.89203C16.816 3.89203 15.979 4.68003 15.422 4.91603C15.191 11.666 12.247 16.133 5.34498 15.998H4.89898C4.48898 15.998 0.734977 15.538 0.000976562 14.111C2.27198 14.307 3.89398 13.689 4.69398 12.934C3.73398 12.634 2.01498 12.457 1.71498 9.98403C2.06398 10.09 2.27898 10.212 2.90498 10.103C1.70498 9.24703 0.373977 8.53003 0.447977 6.33003C0.732977 6.65803 1.51498 6.86603 1.78798 6.80203C1.08498 6.56103 -0.182023 3.44203 0.893977 1.85003C2.71198 3.70403 4.62898 5.45603 8.04598 5.62303C8.25398 3.33003 9.18298 1.79303 10.95 1.14403Z"/>
@@ -118,7 +120,7 @@
             </a>
           </li>
           <li>
-            <a class="social-media__button button blue-button" href="#">
+            <a class="social-media__button" href="#">
             <span class="visually-hidden">Facebook</span>
             <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z"/>
@@ -126,7 +128,7 @@
             </a>
           </li>
           <li>
-            <a class="social-media__button button blue-button" href="#">
+            <a class="social-media__button" href="#">
             <span class="visually-hidden">YouTube</span>
             <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z"/>
@@ -135,7 +137,7 @@
           </li>
         </ul>
       </div>
-      <div class="madeby">
+      <p class="madeby">
         <span class="madeby__text">Разработано</span>
         <a class="madeby__logo" href="https://htmlacademy.ru/intensive/htmlcss">
           <svg width="115" height="41" viewBox="0 0 115 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +145,7 @@
           </svg>
           <span class="visually-hidden">HTML академия</span>
         </a>
-      </div>
+      </p>
     </footer>
 
   </body>
