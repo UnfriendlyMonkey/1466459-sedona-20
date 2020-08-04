@@ -1,0 +1,64 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list-not () {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.headings-mobile () {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: @max-black;
+  text-align: center;
+}
+
+.headings-desktop () {
+  .headings-mobile;
+  font-size: 21px;
+}
+
+.main-text-mobile () {
+  font-size: 14px;
+  line-height: 21px;
+  color: @main-text;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  color: @max-white;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  background-color: @blue-light;
+  margin: 0;
+  border: none;
+  min-height: 58px;
+}

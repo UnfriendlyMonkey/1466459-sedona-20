@@ -1,0 +1,34 @@
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  padding: 40px 50px 20px 50px;
+  min-height: 280px;
+  background-color: @max-white;
+  box-sizing: border-box;
+}
+
+.popup--success {
+  min-height: 323px;
+  background: linear-gradient(to bottom, @max-white 225px, @bg-light 98px);
+}
+
+.popup__headline {
+  .headings-mobile;
+  margin: 0;
+}
+
+.popup__description {
+  .main-text-mobile;
+  line-height: 24px;
+  text-align: center;
+}
+
+.popup__button {
+  .button;
+  font-size: 18px;
+  min-height: 58px;
+  min-width: 180px;
+}
