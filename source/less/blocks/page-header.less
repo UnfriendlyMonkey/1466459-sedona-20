@@ -1,0 +1,57 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  background-color: @max-white;
+  position: relative;
+  width: 100%;
+}
+
+.page-header__logo-wrapper {
+  min-height: 56px;
+  background-color: transparent;
+  position: relative;
+  order: 2;
+}
+
+.page-header__logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.page-header__open-menu {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  width: 23px;
+  height: 22px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  // background-image: url("../img/icon-menu.svg");
+
+  & svg {
+    fill: @blue-light;
+
+    &:hover,
+    :focus {
+      opacity: 0.6;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.3;
+      border: none;
+      outline: none;
+    }
+  }
+}

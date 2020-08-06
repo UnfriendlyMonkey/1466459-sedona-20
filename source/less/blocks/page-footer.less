@@ -1,0 +1,36 @@
+.page-footer {
+  width: 100%;
+  background-color: @max-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-footer__hashtag {
+  .headings-desktop;
+}
+
+.page-footer__madeby {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-footer__madebytext {
+  .main-text-mobile;
+  line-height: 26px;
+  color: @max-black;
+}
+
+.page-footer__madebylogo svg {
+  fill: @max-black;
+
+  &:hover,
+  :focus {
+    fill: @blue-light;
+  }
+
+  &:active {
+    fill: @max-black;
+    opacity: 0.3;
+  }
+}

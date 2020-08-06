@@ -1,0 +1,42 @@
+.social-media {
+  width: 151px;
+}
+
+.social-media__list {
+  .list-not;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.social-media__button {
+  display: inline-flex;
+  background-color: @blue-light;
+  margin: 0;
+  border: none;
+  width: 46px;
+  height: 48px;
+
+  & svg {
+    display: block;
+    margin: auto;
+    fill: @max-white;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @blue-medium;
+    border: none;
+    outline: none;
+  }
+
+  &:active {
+    background-color: @blue-dark;
+    border: none;
+    outline: none;
+
+    & svg {
+      fill: @white-transparent;
+    }
+  }
+}
