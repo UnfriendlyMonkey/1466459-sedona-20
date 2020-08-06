@@ -1,0 +1,86 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.review__group {
+  border: none;
+  padding: 20px 20px 25px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review__legend {
+  .headings-mobile;
+  padding-top: 20px;
+}
+
+.review__description {
+  .main-text-mobile;
+  line-height: 26px;
+  text-align: left;
+}
+
+.review__input {
+  .headings-mobile;
+  text-align: left;
+  text-transform: none;
+  padding-left: 22px;
+  background-color: @bg-light;
+  min-height: 58px;
+  border: 4px solid @bg-light;
+  color: @max-black;
+
+  &:hover {
+    background-color: @bg-medium-v2;
+    border: 4px solid @bg-medium-v2;
+  }
+
+  &:focus,
+  :active {
+    background-color: @max-white;
+    border: 4px solid @bg-medium-v2;
+    outline: none;
+  }
+}
+
+.review__input::placeholder,
+.review__input::-webkit-input-placeholder,
+.review__input::-moz-placeholder {
+  color: @max-black;
+  //разобраться с цветом плейсхолдера
+}
+
+.review__info {
+  .headings-mobile;
+  text-align: left;
+  text-transform: none;
+  padding-left: 26px;
+  //29 for checkboxes
+}
+
+.review__text {
+  .headings-mobile;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-align: left;
+  text-transform: none;
+  min-width: 279px;
+  min-height: 160px;
+  padding: 13px 23px 29px 21px;
+  background-color: @bg-light;
+  border: 4px solid @bg-light;
+
+  &:hover {
+    background-color: @bg-medium-v2;
+    border: 4px solid @bg-medium-v2;
+  }
+
+  &:focus,
+  :active {
+    background-color: @max-white;
+    border: 4px solid @bg-medium-v2;
+    outline: none;
+  }
+}

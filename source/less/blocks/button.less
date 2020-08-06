@@ -11,4 +11,22 @@
   margin: 0;
   border: none;
   min-height: 58px;
+
+  &:hover,
+  :focus {
+    background-color: @blue-medium;
+    border: none;
+    outline: none;
+  }
+
+  &:active {
+    background-color: @blue-dark;
+    color: @white-transparent;
+    border: none;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: @bg-medium-v2;
+  }
 }
