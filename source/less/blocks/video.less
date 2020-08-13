@@ -1,5 +1,8 @@
 .video {
   margin: 32px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .video__intro {
@@ -7,6 +10,12 @@
   margin: 0;
   padding-left: 33px;
   padding-right: 33px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 445px;
+    font-size: 30px;
+    line-height: 26px;
+  }
 }
 
 .video__description {
@@ -16,4 +25,8 @@
   padding: 33px;
   text-align: center;
   //to recheck;
+
+  @media (min-width: @tablet-width) {
+    max-width: 445px;
+  }
 }
