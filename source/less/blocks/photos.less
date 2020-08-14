@@ -1,17 +1,34 @@
+.photos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .photos__wrapper {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: @max-white;
 
   @media (min-width: @tablet-width) {
+    width: 768px;
     padding: 0 60px 0 60px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & :first-child {
+      width: 100%;
+    }
   }
 
   @media (min-width: @desktop-width) {
+    width: 1200px;
     padding: 0;
+
+    & :first-child {
+      width: 100%;
+    }
   }
 }
 
@@ -21,6 +38,7 @@
 
   @media (min-width: @tablet-width) {
     padding: 0;
+    width: 324px;
   }
 
   @media (min-width: @desktop-width) {
@@ -29,23 +47,28 @@
   }
 }
 
+.photos__photo {
+  width: 100%;
+}
+
 .photos__description {
   @media (min-width: @tablet-width) {
     height: 80px;
     min-width: 324px;
     padding: 15px 20px 15px 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto min-content;
     background-color: @bg-light;
   }
 
   @media (min-width: @desktop-width) {
-    min-width: 400px;
+    width: 100%;
     background-color: @black-transparent;
     position: absolute;
     bottom: 0;
+
+    display: grid;
+    grid-template-columns: auto min-content;
   }
 }
 
@@ -57,6 +80,11 @@
   text-transform: uppercase;
   color: @max-black;
 
+  @media (min-width: @tablet-width) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
   @media (min-width: @desktop-width) {
     color: @max-white;
   }
@@ -66,6 +94,11 @@
   margin: 0;
   line-height: 24px;
   color: @main-text;
+
+  @media (min-width: @tablet-width) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 
   @media (min-width: @desktop-width) {
     color: @max-white;
@@ -77,10 +110,14 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  min-width: 90px;
+  min-width: 70px;
 
   @media (min-width: @tablet-width) {
     justify-content: flex-end;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
 }
 
@@ -89,11 +126,13 @@
   padding: 0;
   font-size: 0;
   line-height: 0;
-  width: 23px;
+  flex-basis: 23px;
   height: 21px;
   border: none;
   background-image: url("../img/icon-like.svg");
+  background-repeat: no-repeat;
   vertical-align: bottom;
+  flex-grow: 0;
 }
 
 .photos__counter {
@@ -103,6 +142,7 @@
   text-transform: uppercase;
   color: @max-black;
   padding-left: 14px;
+  flex-grow: 1;
 
   @media (min-width: @desktop-width) {
     color: @max-white;

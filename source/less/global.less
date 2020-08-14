@@ -1,6 +1,9 @@
 html {
   box-sizing: border-box;
-  background-color: @bg-light;
+
+  @media (min-width: @desktop-width) {
+    background-color: @bg-light;
+  }
 }
 
 *,
