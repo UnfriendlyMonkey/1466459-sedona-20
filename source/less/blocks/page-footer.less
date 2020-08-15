@@ -4,10 +4,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 120px;
+    align-items: center;
+    justify-items: center;
+  }
 }
 
 .page-footer__hashtag {
   .headings-desktop;
+  text-align: center;
 }
 
 .page-footer__madeby {
@@ -19,6 +28,7 @@
   .main-text-mobile;
   line-height: 26px;
   color: @max-black;
+  padding-right: 25px;
 }
 
 .page-footer__madebylogo svg {

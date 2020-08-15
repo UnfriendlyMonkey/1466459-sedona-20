@@ -11,7 +11,13 @@
   background-color: transparent;
   position: relative;
   order: 2;
+
+  @media (min-width: @tablet-width) {
+    min-height: auto;
+    order: 1;
+  }
 }
+
 
 .page-header__logo {
   position: absolute;
@@ -22,6 +28,7 @@
   margin: 0;
   font-size: 0;
   line-height: 0;
+  background-color: transparent;
 }
 
 .page-header__open-menu {
@@ -53,5 +60,9 @@
       border: none;
       outline: none;
     }
+  }
+
+  @media (min-width: @tablet-width) {
+    display: none;
   }
 }

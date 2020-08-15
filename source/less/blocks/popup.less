@@ -10,14 +10,38 @@
   box-sizing: border-box;
 }
 
+.popup--failure {
+  @media (min-width: @tablet-width) {
+    width: 400px;
+    min-height: 347px;
+    padding: 52px 64px 49px 64px;
+  }
+}
+
 .popup--success {
   min-height: 323px;
   background: linear-gradient(to bottom, @max-white 225px, @bg-light 98px);
+
+  @media (min-width: @tablet-width) {
+    width: 640px;
+    min-height: 347px;
+    padding: 55px 91px 44px 91px;
+    background: linear-gradient(to bottom, @max-white 201px, @bg-light 146px);
+
+    & .popup__button {
+      min-width: 458px;
+    }
+  }
 }
 
 .popup__headline {
   .headings-mobile;
   margin: 0;
+
+  @media (min-width: @tablet-width) {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 
 .popup__description {
@@ -31,4 +55,10 @@
   line-height: 26px;
   min-height: 58px;
   min-width: 180px;
+
+  @media (min-width: @tablet-width) {
+    min-width: 272px;
+    font-size: 21px;
+    line-height: 26px;
+  }
 }

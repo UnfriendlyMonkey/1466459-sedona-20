@@ -1,20 +1,39 @@
 .interested {
   display: flex;
   flex-direction: column;
-  background-color: @max-white;
+  justify-content: space-between;
   text-align: center;
+  min-height: 287px;
   padding: 33px 20px 49px 20px;
+  margin: 0 auto;
+  background-color: @max-white;
+
+  @media (min-width: @tablet-width) {
+    width: 458px;
+    min-height: 318px;
+    padding: 58px 0 58px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 58px 0 66px 0;
+    min-height: 331px;
+  }
 }
 
 .interested__intro {
   .headings-desktop;
-  // font-size: 21px;
-  // line-height: 26px;
+  margin: 0;
+
+  @media (min-width: @tablet-width) {
+    font-size: 30px;
+    line-height: 26px;
+  }
 }
 
 .interested__proposal {
   .main-text-mobile;
   line-height: 24px;
+  margin: 0;
 }
 
 .interested__find {
