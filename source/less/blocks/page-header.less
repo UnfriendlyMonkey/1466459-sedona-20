@@ -29,7 +29,23 @@
   font-size: 0;
   line-height: 0;
   background-color: transparent;
+
+  @media (min-width: @desktop-width) {
+    min-height: 97px;
+    width: 187px;
+
+    & picture {
+      width: 187px;
+    }
+  }
 }
+
+.page-header__svg {
+  @media (min-width: @desktop-width) {
+    min-width: 187px;
+  }
+}
+
 
 .page-header__open-menu {
   position: absolute;
