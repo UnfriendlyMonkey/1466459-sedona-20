@@ -4,6 +4,8 @@
   background-color: @max-white;
   position: relative;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .page-header__logo-wrapper {
@@ -29,7 +31,23 @@
   font-size: 0;
   line-height: 0;
   background-color: transparent;
+
+  @media (min-width: @desktop-width) {
+    min-height: 97px;
+    width: 187px;
+
+    picture {
+      width: 187px;
+    }
+  }
 }
+
+.page-header__svg {
+  @media (min-width: @desktop-width) {
+    min-width: 187px;
+  }
+}
+
 
 .page-header__open-menu {
   position: absolute;
@@ -46,11 +64,11 @@
   background-color: transparent;
   // background-image: url("../img/icon-menu.svg");
 
-  & svg {
+  svg {
     fill: @blue-light;
 
     &:hover,
-    :focus {
+    &:focus {
       opacity: 0.6;
       outline: none;
     }

@@ -1,7 +1,10 @@
 .advantage {
   text-transform: uppercase;
   text-align: center;
-  background-color: @bg-3-5;
+  background-color: @max-white;
+  max-width: 1200px;
+  align-content: center;
+  margin: 0 auto;
 }
 
 .advantage__title {
@@ -21,6 +24,7 @@
   @media (min-width: @tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
   }
 }
 
@@ -55,7 +59,7 @@
   background-color: @blue-light;
   padding: 34px 13px 40px 13px;
 
-  & > .advantage__title {
+  .advantage__title {
     color: @max-white;
   }
 
@@ -86,7 +90,7 @@
   padding-left: 70px;
   text-align: left;
 
-  & .advantage__title {
+  .advantage__title {
     text-align: left;
   }
 
@@ -94,7 +98,7 @@
     text-align: center;
     padding: 60px 40px 60px 40px;
 
-    & .advantage__title {
+    .advantage__title {
       text-align: center;
     }
   }
@@ -107,6 +111,8 @@
 
 .advantage__item--grey {
   padding: 25px 30px;
+  width: 100%;
+  max-width: 520px;
 
   @media (min-width: @tablet-width) {
     padding: 41px 35px;

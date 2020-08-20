@@ -10,7 +10,11 @@
     <header class="page-header">
       <div class="page-header__logo-wrapper">
         <a class="page-header__logo" href="index.html">
-          <img src="img/logo-sedona-mobile.svg" width="101" height="84" alt="City of Sedona">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="img/logo-sedona-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-sedona-tablet.svg">
+            <img class="page-header__svg" src="img/logo-sedona-mobile.svg" width="101" height="84" alt="City of Sedona">
+          </picture>
         </a>
         <button class="page-header__open-menu" type="button">
           <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.928px" height="21.982px" viewBox="0 0 22.928 21.982" enable-background="new 0 0 22.928 21.982" xml:space="preserve">
@@ -61,7 +65,7 @@
       <h1 class="visually-hidden">Расскажите о вашем пребывании в восхитительной Седоне!</h1>
       <section class="intro">
         <div class="intro__picture-wrapper">
-          <img class="intro__picture" src="img/sedona.svg" width="229" height="39" alt="Welcome to Sedona!">
+          <img class="intro__picture" src="img/text-sedona.svg" width="229" height="39" alt="Welcome to Sedona!">
         </div>
         <h2 class="intro__headline">Оставьте свой отзыв</h2>
         <p class="intro__description">Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных Вами достопримечательностях</p>
@@ -85,14 +89,16 @@
         </fieldset>
         <fieldset class="review__group review__group--contact">
           <legend class="review__legend">Контактная информация:</legend>
+          <div class="review__contact-container">
             <label>
-              <span class="review__description">Контактный телефон*:</span>
+              <span class="review__description"><span class="review__opt">Контактный </span>телефон*:</span>
               <input class="review__input" type="tel" name="phone" required placeholder="Введите телефон">
             </label>
             <label>
               <span class="review__description">Электронная почта*:</span>
               <input class="review__input" type="email" name="email" required placeholder="Введите e-mail">
             </label>
+          </div>
         </fieldset>
         <fieldset class="review__group review__group--impression">
           <legend class="review__legend">Ваше общее впечатление:</legend>
@@ -111,22 +117,24 @@
         </fieldset>
         <fieldset class="review__group review__group--visited">
           <legend class="review__legend">Посещенные достопримечательности:</legend>
-          <label>
-            <input class="review__check" type="checkbox" name="bridge" value="bridge" checked>
-            <span class="review__info">Мост Дьявола</span>
-          </label>
-          <label>
-            <input class="review__check" type="checkbox" name="bell" value="bell" checked>
-            <span class="review__info">Гора-Колокол</span>
-          </label>
-          <label>
-            <input class="review__check" type="checkbox" name="park" value="park" checked>
-            <span class="review__info">Слайд-парк</span>
-          </label>
-          <label>
-            <input class="review__check" type="checkbox" name="rocks" value="rocks">
-            <span class="review__info">Красные скалы</span>
-          </label>
+          <div class="review__check-container">
+            <label>
+              <input class="review__check" type="checkbox" name="bridge" value="bridge" checked>
+              <span class="review__info">Мост Дьявола</span>
+            </label>
+            <label>
+              <input class="review__check" type="checkbox" name="bell" value="bell" checked>
+              <span class="review__info">Гора-Колокол</span>
+            </label>
+            <label>
+              <input class="review__check" type="checkbox" name="park" value="park" checked>
+              <span class="review__info">Слайд-парк</span>
+            </label>
+            <label>
+              <input class="review__check" type="checkbox" name="rocks" value="rocks">
+              <span class="review__info">Красные скалы</span>
+            </label>
+          </div>
         </fieldset>
         <fieldset class="review__group review__group--text">
           <legend class="review__legend">Опишите свои эмоции:</legend>

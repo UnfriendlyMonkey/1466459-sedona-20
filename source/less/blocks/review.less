@@ -3,17 +3,20 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 auto;
 
   @media (min-width: @tablet-width) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 60px;
     padding-top: 0;
-    align-items: start;
+    align-items: flex-start;
   }
 
   @media (min-width: @desktop-width) {
     padding: 0 120px 66px 120px;
+    max-width: 1200px;
   }
 }
 
@@ -30,38 +33,6 @@
   }
 }
 
-@media (min-width: @tablet-width) {
-  .review__group--impression {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-
-  .review__group--contact {
-    grid-column-start: 1;
-    grid-column-end: 3;
-
-    & .review__input {
-      min-width: 648px;
-    }
-  }
-
-  .review__group--visited {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // Разобраться, почему не работает
-  }
-
-  .review__group--text {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-}
-
 .review__legend {
   .headings-mobile;
   padding-top: 20px;
@@ -74,6 +45,7 @@
 .review__description {
   .main-text-mobile;
   line-height: 26px;
+  // padding-left: 22px;
 }
 
 .review__input {
@@ -135,7 +107,8 @@
   }
 
   @media (min-width: @tablet-width) {
-    min-width: 648px;
+    width: 100%;
+    // min-width: 648px;
   }
 
   @media (min-width: @desktop-width) {
@@ -143,12 +116,305 @@
   }
 }
 
+.review__group--about {
+  label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .review__input {
+    margin-left: 10px;
+    flex-shrink: 1;
+  }
+
+  @media (min-width: @tablet-width) {
+    flex-basis: 50%;
+    min-height: 292px;
+    padding-left: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    // flex-grow: 1;
+    // Why it becomes 310px?? legend seems not to react to css grid & flex
+
+    .review__legend {
+      text-align: left;
+      padding: 0;
+    }
+
+    .review__input {
+      width: 178px;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+}
+
+.review__group--impression {
+  label {
+    min-height: 50px;
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  @media (min-width: @tablet-width) {
+    flex-basis: 50%;
+    min-height: 292px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid @form-deviders;
+    order: -1;
+    // flex-grow: 1;
+
+    .review__legend {
+      text-align: left;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .review__legend {
+      padding-left: 80px;
+    }
+  }
+}
+
+.review__contact-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  label {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 58px;
+      height: 58px;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 25px;
+      background-color: @contact-icons;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .review__input {
+    width: calc(100% - 58px);
+    margin-top: 8px;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+
+    label {
+      display: flex;
+      flex-direction: row;
+      // flex-grow: 1;
+      justify-content: flex-start;
+      align-items: baseline;
+    }
+
+    label:last-child {
+      margin-left: auto;
+
+      .review__description {
+        min-width: 148px;
+      }
+    }
+
+    .review__input {
+      min-width: 257px;
+      flex-grow: 1;
+      // flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .review__opt {
+      display: none;
+    }
+  }
+}
+
+.review__group--contact {
+  @media (min-width: @tablet-width) {
+    min-width: 648px;
+    flex-basis: 648px;
+    flex-grow: 1;
+    margin-top: 70px;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: calc((100% - 400px) / 2);
+      background-color: @form-deviders;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: calc((100% - 400px) / 2);
+      background-color: @form-deviders;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+
+    .review__legend {
+      padding: 0;
+    }
+
+    .review__input {
+      // min-width: 648px;
+      width: calc(100% - 58px);
+      margin-top: 8px;
+      margin-bottom: 25px;
+      position: relative;
+    }
+  }
+}
+
+.review__group--visited {
+  .review__check-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    min-height: 50px;
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-top: 70px;
+    position: relative;
+    min-width: 648px;
+    flex-grow: 1;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: calc((100% - 400px) / 2);
+      background-color: @form-deviders;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: calc((100% - 400px) / 2);
+      background-color: @form-deviders;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+
+    .review__legend {
+      padding: 0;
+      width: 400px;
+    }
+
+    .review__check-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    label {
+      flex-basis: 200px;
+      min-height: 50px;
+      margin: 0 25px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    label:first-child {
+      margin-left: 0;
+    }
+
+    label:last-child {
+      margin-right: 0;
+    }
+
+    label:nth-child(n+3) {
+      text-align: right;
+    }
+  }
+}
+
+.review__group--text {
+  @media (min-width: @tablet-width) {
+    margin-top: 70px;
+    position: relative;
+    flex-basis: 100%;
+    flex-grow: 1;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: calc((100% - 400px) / 2);
+      background-color: @form-deviders;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: calc((100% - 400px) / 2);
+      background-color: @form-deviders;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+
+    .review__legend {
+      padding: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .review__group--text::after {
+      width: 280px;
+    }
+  }
+}
+
 .review__button {
   margin-top: 51px;
 
-
   @media (min-width: @tablet-width) {
     margin-top: 58px;
+    flex-basis: 50%;
   }
 }
 
@@ -160,5 +426,6 @@
     margin-top: 78px;
     text-transform: uppercase;
     text-align: right;
+    margin-left: auto;
   }
 }
