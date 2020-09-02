@@ -28,43 +28,54 @@
   }
 }
 
-.advantage__item {
-  background-color: @bg-3-5;
-}
-
+// Первая строка с фото и голубым фоном
 .advantage__item--city {
-  background-color: @blue-light;
-  grid-column-start: 1;
-  grid-column-end: -1;
+// Декоративный вырез из мобильной версии
+  &::before {
+    content: "";
+    width: 100%;
+    min-height: 37px;
+    display: block;
+    position: relative;
+    top: 15px;
+    background-image: @blue-light;
+    background: url("../../img/white-angle-3-mobile.png") no-repeat center center;
+    z-index: 2;
+  }
 
   @media (min-width: @tablet-width) {
+    grid-column-start: 1;
+    grid-column-end: -1;
     display: grid;
     grid-template-columns: 1fr 2fr;
+// Располагаем в грид начиная с таблетки и убираем декоративный вырез
+    &::before {
+      display: none;
+    }
   }
 }
 
-.advantage__item--bridge {
+.advantage__item--city .advantage__text {
   background-color: @blue-light;
-  grid-column-start: 1;
-  grid-column-end: -1;
-
-  @media (min-width: @tablet-width) {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-.advantage__text {
   color: @max-white;
-  background-color: @blue-light;
-  padding: 34px 13px 40px 13px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 54px 12px 40px 12px;
+  min-height: 211px;
+  // Это костыль. иначе они сейчас расползаются шире назначенной высоты, не пойму, почему
   .advantage__title {
     color: @max-white;
+    margin: 0;
+  }
+
+  .advantage__description {
+    margin: 0;
   }
 
   @media (min-width: @tablet-width) {
-    padding: 40px 32px 45px 32px;
+    height: 256px;
+    padding: 40px 36px 40px 36px;
   }
 
   @media (min-width: @desktop-width) {
@@ -72,9 +83,72 @@
   }
 }
 
+// правильно размещаем картинку
+.advantage__item--city .advantage__image {
+  object-fit: cover;
+  @media (min-width: @tablet-width) {
+    width: 100%;
+    height: 256px;
+  }
+}
+
+// the same for the blue stripe with bridge photo
+.advantage__item--bridge {
+
+  @media (min-width: @tablet-width) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.advantage__item--bridge .advantage__image {
+  object-fit: cover;
+  @media (min-width: @tablet-width) {
+    width: 100%;
+    height: 256px;
+  }
+}
+
+.advantage__item--bridge .advantage__text {
+  color: @max-white;
+  background-color: @blue-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 39px 20px 35px 20px;
+  min-height: 191px;
+
+
+  .advantage__title {
+    color: @max-white;
+    margin: 0;
+  }
+
+  .advantage__description {
+    margin: 0;
+  }
+
+  @media (min-width: @tablet-width) {
+    padding: 40px 36px 40px 36px;
+    height: 256px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 47px 60px 60px 60px;
+  }
+}
+ // Приходится дублировать паддинги, т.к. они везде разные
+
+
+ // Полоса с неномерными преимуществами и пиктограммами
 .advantage__pics-list {
   .list-not;
   background-color: @max-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   @media (min-width: @tablet-width) {
     grid-column-start: 1;
@@ -89,6 +163,7 @@
   color: @main-text;
   padding-left: 70px;
   text-align: left;
+  min-height: 138px;
 
   .advantage__title {
     text-align: left;
@@ -96,7 +171,7 @@
 
   @media (min-width: @tablet-width) {
     text-align: center;
-    padding: 60px 40px 60px 40px;
+    padding: 158px 36px 60px 36px;
 
     .advantage__title {
       text-align: center;
@@ -104,21 +179,85 @@
   }
 
   @media (min-width: @desktop-width) {
-    padding: 60px;
-    padding-bottom: 80px;
+    padding: 158px 60px 80px 60px;
+  }
+}
+
+.advantage__pics-item--housing {
+  background-image: url("../img/icon-house.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 5%;
+  background-size: 40px 40px;
+
+  @media (min-width: @tablet-width) {
+    background-position: 50% 60px;
+    background-size: 75px 72px;
+  }
+}
+
+.advantage__pics-item--souvenirs {
+  background-image: url("../img/icon-gift.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 5%;
+  background-size: 32px 38px;
+
+  @media (min-width: @tablet-width) {
+    background-position: 50% 60px;
+    background-size: 76px 68px;
+  }
+}
+
+.advantage__pics-item--food {
+  background-image: url("../img/icon-burger.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 5%;
+  background-size: 40px 35px;
+
+  @media (min-width: @tablet-width) {
+    background-position: 50% 60px;
+    background-size: 64px 75px;
   }
 }
 
 .advantage__item--grey {
+  background-color: @bg-3-5;
   padding: 25px 30px;
   width: 100%;
   max-width: 520px;
+  position: relative;
 
   @media (min-width: @tablet-width) {
-    padding: 41px 35px;
+    min-height: 256px;
+    padding: 42px 33px 40px 33px;
+    align-self: stretch;
   }
 
   @media (min-width: @desktop-width) {
     padding: 43px 50px 62px 50px;
+  }
+}
+
+.advantage__item--grey {
+    &::after {
+      content: "";
+      width: 280px;
+      height: 1px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: calc((100% - 280px) / 2);
+      background-color: @deviders-bg;
+
+      &:last-of-type {
+        &after {
+          display: none;
+          /// i'm giving up as of now - don't know how to remove the last line in this row
+        }
+      }
+
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
   }
 }

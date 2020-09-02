@@ -63,6 +63,7 @@
 
     <main class="page-main">
       <h1 class="visually-hidden">Добро пожаловать в восхитительную Седону!</h1>
+
       <section class="intro">
         <div class="intro__picture-wrapper intro__picture-wrapper--index">
           <img class="intro__picture" src="img/text-sedona-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona!">
@@ -80,7 +81,12 @@
               <span class="advantage__number">— №1 —</span>
               <p class="advantage__description">Седона не аттракцион для туристов, там течет своя жизнь</p>
             </div>
-            <img class="advantage__image" src="img/main-city-mobile@1x.jpg" width="520" height="260" alt="Фотография улицы города Седона">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/main-city-desktop@1x.jpg">
+              <source media="(min-width: 768px)" srcset="img/main-city-tablet@1x.jpg">
+              <img class="advantage__image" src="img/main-city-mobile@1x.jpg" width="520" height="260" alt="Фотография улицы города Седона">
+            </picture>
+            <!-- <img class="advantage__image" src="img/main-city-mobile@1x.jpg" width="520" height="260" alt="Фотография улицы города Седона"> -->
             <ul class="advantage__pics-list">
               <li class="advantage__pics-item advantage__pics-item--housing">
                 <h3 class="advantage__title">Жилье</h3>
@@ -97,7 +103,12 @@
             </ul>
           </li>
           <li class="advantage__item advantage__item--bridge">
-            <img class="advantage__image" src="img/main-bridge-mobile@1x.jpg" width="520" height="260" alt="Фотография моста дьявола">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/main-bridge-desktop@1x.jpg">
+              <source media="(min-width: 768px)" srcset="img/main-bridge-tablet@1x.jpg">
+              <img class="advantage__image" src="img/main-bridge-mobile@1x.jpg" width="520" height="260" alt="Фотография моста Дьявола">
+            </picture>
+            <!-- <img class="advantage__image" src="img/main-bridge-mobile@1x.jpg" width="520" height="260" alt="Фотография моста дьявола"> -->
             <div class="advantage__text">
               <h3 class="advantage__title">Там есть Мост дьявола</h3>
               <span class="advantage__number">— №2 —</span>
