@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>HTML Academy: Седона</title>
     <link href="css/styles.min.css" rel="stylesheet">
+    <!-- Pixel Glass -->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position:  50% 0;
+        /* По умолчанию показывается мобильный макет */
+        background-image: url( "img/G_index_Mobile.png" );
+      }
+      /* Планшет */
+      @media ( min-width: 768px ) {
+        HTML {
+          /* Планшетный макет */
+          background-image: url( "img/G_index_tabler.png" );
+        }
+      }
+      /* Десктоп */
+      @media ( min-width: 1200px ) {
+        HTML {
+          /* Десктопный макет */
+          background-image: url( "img/G_index_Desktop.png" );
+        }
+      }
+    </style>
+    <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+    <script src="../node_modules/pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
   </head>
   <body class="page-body">
     <header class="page-header">
@@ -92,13 +118,13 @@
                 <h3 class="advantage__title">Жилье</h3>
                 <p class="advantage__description">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
               </li>
-              <li class="advantage__pics-item advantage__pics-item--souvenirs">
-                <h3 class="advantage__title">Сувениры</h3>
-                <p class="advantage__description">Не только китайского, но и местного производства!</p>
-              </li>
               <li class="advantage__pics-item advantage__pics-item--food">
                 <h3 class="advantage__title">Еда</h3>
                 <p class="advantage__description">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              </li>
+              <li class="advantage__pics-item advantage__pics-item--souvenirs">
+                <h3 class="advantage__title">Сувениры</h3>
+                <p class="advantage__description">Не только китайского, но и местного производства!</p>
               </li>
             </ul>
           </li>

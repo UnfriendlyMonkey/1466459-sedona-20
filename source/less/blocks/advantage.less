@@ -12,6 +12,9 @@
 
   @media (min-width: @tablet-width) {
     .headings-desktop;
+    max-width: 160px;
+    text-align: center;
+    align-self: center;
   }
 }
 
@@ -30,16 +33,18 @@
 
 // Первая строка с фото и голубым фоном
 .advantage__item--city {
-// Декоративный вырез из мобильной версии
+  position: relative;
+  // Декоративный вырез из мобильной версии
   &::before {
     content: "";
     width: 100%;
     min-height: 37px;
     display: block;
-    position: relative;
-    top: 15px;
-    background-image: @blue-light;
+    position: absolute;
+    top: 0;
+    left: 0;
     background: url("../../img/white-angle-3-mobile.png") no-repeat center center;
+    // background-size: cover;
     z-index: 2;
   }
 
@@ -48,7 +53,7 @@
     grid-column-end: -1;
     display: grid;
     grid-template-columns: 1fr 2fr;
-// Располагаем в грид начиная с таблетки и убираем декоративный вырез
+    // Располагаем в грид начиная с планшета и убираем декоративный вырез
     &::before {
       display: none;
     }
@@ -61,8 +66,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 54px 12px 40px 12px;
-  min-height: 211px;
+  padding: 72px 12px 40px 12px;
+  min-height: 227px;
   // Это костыль. иначе они сейчас расползаются шире назначенной высоты, не пойму, почему
   .advantage__title {
     color: @max-white;
@@ -83,9 +88,10 @@
   }
 }
 
-// правильно размещаем картинку
+// пытаемся правильно разместить картинку
 .advantage__item--city .advantage__image {
   object-fit: cover;
+
   @media (min-width: @tablet-width) {
     width: 100%;
     height: 256px;
@@ -94,6 +100,9 @@
 
 // the same for the blue stripe with bridge photo
 .advantage__item--bridge {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
   @media (min-width: @tablet-width) {
     grid-column-start: 1;
@@ -103,11 +112,15 @@
   }
 }
 
+
 .advantage__item--bridge .advantage__image {
   object-fit: cover;
+  order: 2;
+
   @media (min-width: @tablet-width) {
     width: 100%;
     height: 256px;
+    order: 1;
   }
 }
 
@@ -119,6 +132,7 @@
   justify-content: space-between;
   padding: 39px 20px 35px 20px;
   min-height: 191px;
+  order: -1;
 
 
   .advantage__title {
@@ -133,22 +147,32 @@
   @media (min-width: @tablet-width) {
     padding: 40px 36px 40px 36px;
     height: 256px;
+    order: 2;
   }
 
   @media (min-width: @desktop-width) {
-    padding: 47px 60px 60px 60px;
+    padding: 52px 80px 50px 80px;
   }
 }
- // Приходится дублировать паддинги, т.к. они везде разные
 
+//  Приходится дублировать паддинги, т.к. они везде разные
 
- // Полоса с неномерными преимуществами и пиктограммами
+//  Полоса с неномерными преимуществами и пиктограммами
+
 .advantage__pics-list {
   .list-not;
   background-color: @max-white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  @media (max-width: @mobile-width-only) {
+    display: grid;
+    grid-template-rows: 105px 84px 105px;
+    row-gap: 26px;
+    // height: 416px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+  }
 
   @media (min-width: @tablet-width) {
     grid-column-start: 1;
@@ -157,6 +181,29 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.advantage__pics-item--food {
+  order: 3;
+  flex-basis: 105px;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+.advantage__pics-item--souvenirs {
+  flex-shrink: 1;
+  flex-grow: 0;
+  flex-basis: 84px;
+}
+
+@media (min-width: @tablet-width) {
+  .advantage__pics-item--food {
+    order: 2;
+  }
+  .advantage__pics-item--souvenirs {
+    order: 3;
+  }
+}
+
 
 .advantage__pics-item {
   background-color: @max-white;
@@ -167,30 +214,37 @@
 
   .advantage__title {
     text-align: left;
+    margin-top: 0;
   }
 
   @media (min-width: @tablet-width) {
     text-align: center;
-    padding: 158px 36px 60px 36px;
+    padding: 155px 36px 45px 36px;
 
     .advantage__title {
       text-align: center;
+      margin: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .advantage__description {
+      margin-top: 25px;
     }
   }
 
   @media (min-width: @desktop-width) {
-    padding: 158px 60px 80px 60px;
+    padding: 155px 60px 65px 60px;
   }
 }
 
 .advantage__pics-item--housing {
   background-image: url("../img/icon-house.svg");
   background-repeat: no-repeat;
-  background-position: 5% 5%;
+  background-position: 8% -10%;
   background-size: 40px 40px;
 
   @media (min-width: @tablet-width) {
-    background-position: 50% 60px;
+    background-position: 50% 55px;
     background-size: 75px 72px;
   }
 }
@@ -198,66 +252,81 @@
 .advantage__pics-item--souvenirs {
   background-image: url("../img/icon-gift.svg");
   background-repeat: no-repeat;
-  background-position: 5% 5%;
+  background-position: 8% -10%;
   background-size: 32px 38px;
 
   @media (min-width: @tablet-width) {
-    background-position: 50% 60px;
-    background-size: 76px 68px;
+    background-position: 50% 55px;
+    background-size: 76px 75px;
   }
 }
 
 .advantage__pics-item--food {
   background-image: url("../img/icon-burger.svg");
   background-repeat: no-repeat;
-  background-position: 5% 5%;
+  background-position: 7% -5%;
   background-size: 40px 35px;
 
   @media (min-width: @tablet-width) {
-    background-position: 50% 60px;
-    background-size: 64px 75px;
+    background-position: 50% 55px;
+    background-size: 70px 80px;
   }
 }
 
 .advantage__item--grey {
   background-color: @bg-3-5;
-  padding: 25px 30px;
-  width: 100%;
-  max-width: 520px;
-  position: relative;
+  padding: 5px 30px 40px 30px;
+  @media (max-width: @mobile-width-only) {
+    width: 100%;
+    max-height: 167px;
+    position: relative;
+    // Поколдовать еще с высотой строк не могу их пока выровнять
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
   @media (min-width: @tablet-width) {
-    min-height: 256px;
-    padding: 42px 33px 40px 33px;
+    height: 256px;
+    padding: 15px 33px 40px 33px;
     align-self: stretch;
   }
 
   @media (min-width: @desktop-width) {
-    padding: 43px 50px 62px 50px;
+    padding: 15px 50px 30px 50px;
   }
 }
 
-.advantage__item--grey {
-    &::after {
-      content: "";
-      width: 280px;
-      height: 1px;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: calc((100% - 280px) / 2);
-      background-color: @deviders-bg;
+.advantage__item--grey::after {
+  content: "";
+  width: 280px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 280px) / 2);
+  background-color: @deviders-bg;
 
-      &:last-of-type {
-        &after {
-          display: none;
-          /// i'm giving up as of now - don't know how to remove the last line in this row
-        }
-      }
-
+  &:last-of-type::after {
+    display: none;
+    /// i'm giving up as of now - don't know how to remove the last line in this row
+  }
 
   @media (min-width: @tablet-width) {
     display: none;
   }
+}
+
+@media (min-width: @tablet-width) {
+  .advantage__item--grey .advantage__title {
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 13px;
+    align-self: center;
+    text-align: center;
+  }
+  .advantage__item--grey .advantage__description {
+    margin-top: 22px;
   }
 }
