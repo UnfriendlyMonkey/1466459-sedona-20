@@ -23,9 +23,10 @@
 .review__group {
   border: none;
   margin: 0;
-  padding: 20px 20px 25px 20px;
+  padding: 20px 20px 15px 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media (min-width: @tablet-width) {
     padding: 0;
@@ -36,6 +37,19 @@
 .review__legend {
   .headings-mobile;
   padding-top: 20px;
+
+  @media (max-width: @mobile-width-only) {
+    &::before {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: @bg-medium-v2;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 
   @media (min-width: @tablet-width) {
     .headings-desktop;
@@ -91,7 +105,7 @@
   text-transform: none;
   min-width: 279px;
   min-height: 160px;
-  padding: 13px 23px 29px 21px;
+  padding: 9px 19px 25px 17px;
   background-color: @bg-light;
   border: 4px solid @bg-light;
 
@@ -117,18 +131,31 @@
 }
 
 .review__group--about {
+  padding-bottom: 5px;
   label {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .review__input {
     margin-left: 10px;
     flex-shrink: 1;
+  }
+
+  .review__input--fathersname {
+    width: 194px;
+  }
+
+  .review__input--surname {
+    width: 192px;
+  }
+
+  .review__input--username {
+    width: 230px;
   }
 
   @media (min-width: @tablet-width) {
@@ -156,12 +183,36 @@
 }
 
 .review__group--impression {
+  width: 100%;
   label {
     min-height: 50px;
-    display: grid;
-    grid-template-columns: min-content auto;
-    align-items: center;
-    margin-top: 20px;
+    margin-top: 18px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background-color: @bg-light;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .review__radio {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .review__info {
+    padding-left: 78px;
   }
 
   @media (min-width: @tablet-width) {
@@ -187,10 +238,15 @@
   }
 }
 
+
 .review__contact-container {
   display: flex;
   flex-direction: column;
   position: relative;
+
+  .review__description {
+    padding-left: 22px;
+  }
 
   label {
     position: relative;
@@ -202,7 +258,7 @@
       display: block;
       position: absolute;
       right: 0;
-      bottom: 25px;
+      bottom: 13px;
       background-color: @contact-icons;
       background-position: center center;
       background-repeat: no-repeat;
@@ -211,8 +267,8 @@
 
   .review__input {
     width: calc(100% - 58px);
-    margin-top: 8px;
-    margin-bottom: 25px;
+    margin-top: 7px;
+    margin-bottom: 13px;
     position: relative;
   }
 
@@ -250,8 +306,13 @@
     }
   }
 }
-
 .review__group--contact {
+  padding-top: 10px;
+
+  .review__legend {
+    margin-bottom: 5px;
+  }
+
   @media (min-width: @tablet-width) {
     min-width: 648px;
     flex-basis: 648px;
@@ -299,11 +360,39 @@
   .review__check-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .review__check {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .review__info {
+    padding-left: 78px;
   }
 
   label {
     min-height: 50px;
+    margin-top: 22px;
+    margin-bottom: 5px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 55px;
+      height: 55px;
+      border-radius: 5px;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background-color: @bg-light;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
   }
 
   @media (min-width: @tablet-width) {
@@ -410,7 +499,9 @@
 }
 
 .review__button {
-  margin-top: 51px;
+  width: 280px;
+  margin-top: 35px;
+  margin-bottom: 48px;
 
   @media (min-width: @tablet-width) {
     margin-top: 58px;
