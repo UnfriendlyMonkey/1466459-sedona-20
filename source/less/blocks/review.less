@@ -130,6 +130,8 @@
   }
 }
 
+// Personal info group
+
 .review__group--about {
   padding-bottom: 5px;
   label {
@@ -179,6 +181,10 @@
       flex-grow: 1;
       flex-shrink: 1;
     }
+
+    .review__input--username {
+      margin-top: 5px;
+    }
   }
 }
 
@@ -202,6 +208,10 @@
       background-position: center center;
       background-repeat: no-repeat;
     }
+  }
+
+  input[type="radio"]:checked + label::before {
+    background-image: url("../../img/icon-dot.svg");
   }
 
   .review__radio {
@@ -229,6 +239,14 @@
       text-align: left;
       padding: 0;
     }
+
+    label {
+      margin-top: 0;
+    }
+
+    label:nth-child(n+2) {
+      margin-top: 26px;
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -238,6 +256,7 @@
   }
 }
 
+// Contacts group
 
 .review__contact-container {
   display: flex;
@@ -260,9 +279,14 @@
       right: 0;
       bottom: 13px;
       background-color: @contact-icons;
+      background-image: url("../../img/icon-phone.svg");
       background-position: center center;
       background-repeat: no-repeat;
     }
+  }
+
+  .review__email::after {
+    background-image: url("../../img/icon-mail.svg");
   }
 
   .review__input {
@@ -317,8 +341,18 @@
     min-width: 648px;
     flex-basis: 648px;
     flex-grow: 1;
-    margin-top: 70px;
+    margin-top: 48px;
     position: relative;
+
+    label {
+      &::after {
+        bottom: 25px;
+      }
+    }
+
+    .review__contact-container {
+      padding-top: 3px;
+    }
 
     &::before {
       content: "";
@@ -355,6 +389,8 @@
     }
   }
 }
+
+// Visited group
 
 .review__group--visited {
   .review__check-container {
@@ -395,8 +431,12 @@
     }
   }
 
+  input[type="checkbox"]:checked + label::before {
+    background-image: url("../../img/icon-tick.svg");
+  }
+
   @media (min-width: @tablet-width) {
-    margin-top: 70px;
+    margin-top: 25px;
     position: relative;
     min-width: 648px;
     flex-grow: 1;
@@ -429,10 +469,13 @@
     }
 
     .review__check-container {
+      padding-top: 10px;
+      min-height: 150px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      align-content: space-between;
     }
 
     label {
@@ -457,9 +500,11 @@
   }
 }
 
+// Text description group
+
 .review__group--text {
   @media (min-width: @tablet-width) {
-    margin-top: 70px;
+    margin-top: 60px;
     position: relative;
     flex-basis: 100%;
     flex-grow: 1;
@@ -498,13 +543,16 @@
   }
 }
 
+// Button
+
 .review__button {
   width: 280px;
   margin-top: 35px;
   margin-bottom: 48px;
 
   @media (min-width: @tablet-width) {
-    margin-top: 58px;
+    margin-top: 60px;
+    margin-bottom: 0;
     flex-basis: 50%;
   }
 }
@@ -514,7 +562,7 @@
 
   @media (min-width: @tablet-width) {
     display: inline-block;
-    margin-top: 78px;
+    margin-top: 83px;
     text-transform: uppercase;
     text-align: right;
     margin-left: auto;

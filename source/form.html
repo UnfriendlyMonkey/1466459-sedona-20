@@ -90,11 +90,11 @@
         <fieldset class="review__group review__group--contact">
           <legend class="review__legend">Контактная информация:</legend>
           <div class="review__contact-container">
-            <label>
+            <label class="review__phone">
               <span class="review__description"><span class="review__opt">Контактный </span>телефон*:</span>
               <input class="review__input" type="tel" name="phone" required placeholder="Введите телефон">
             </label>
-            <label>
+            <label class="review__email">
               <span class="review__description">Электронная почта*:</span>
               <input class="review__input" type="email" name="email" required placeholder="Введите e-mail">
             </label>
@@ -102,38 +102,24 @@
         </fieldset>
         <fieldset class="review__group review__group--impression">
           <legend class="review__legend">Ваше общее впечатление:</legend>
-            <label>
-              <input class="review__radio" type="radio" name="impression" value="ok" checked>
-              <span class="review__info">Скорее положительное</span>
-            </label>
-            <label>
-              <input class="review__radio" type="radio" name="impression" value="no">
-              <span class="review__info">Скорее отрицательное</span>
-            </label>
-            <label>
-              <input class="review__radio" type="radio" name="impression" value="dn">
-              <span class="review__info">Затрудняюсь ответить</span>
-            </label>
+            <input class="review__radio" type="radio" name="impression" id="ok" value="ok" checked>
+            <label for="ok" class="review__info">Скорее положительное</label>
+            <input class="review__radio" type="radio" name="impression" id="no" value="no">
+            <label for="no" class="review__info">Скорее отрицательное</label>
+            <input class="review__radio" type="radio" name="impression" id="dn" value="dn">
+            <label for="dn" class="review__info">Затрудняюсь ответить</label>
         </fieldset>
         <fieldset class="review__group review__group--visited">
           <legend class="review__legend">Посещенные достопримечательности:</legend>
           <div class="review__check-container">
-            <label>
-              <input class="review__check" type="checkbox" name="bridge" value="bridge" checked>
-              <span class="review__info">Мост Дьявола</span>
-            </label>
-            <label>
-              <input class="review__check" type="checkbox" name="bell" value="bell" checked>
-              <span class="review__info">Гора-Колокол</span>
-            </label>
-            <label>
-              <input class="review__check" type="checkbox" name="park" value="park" checked>
-              <span class="review__info">Слайд-парк</span>
-            </label>
-            <label>
-              <input class="review__check" type="checkbox" name="rocks" value="rocks">
-              <span class="review__info">Красные скалы</span>
-            </label>
+            <input class="review__check" type="checkbox" id="bridge" name="bridge" value="bridge" checked>
+            <label for="bridge" class="review__info">Мост Дьявола</label>
+            <input class="review__check" type="checkbox" id="bell" name="bell" value="bell" checked>
+            <label for="bell" class="review__info">Гора-Колокол</label>
+            <input class="review__check" type="checkbox" id="park" name="park" value="park" checked>
+            <label for="park" class="review__info">Слайд-парк</label>
+            <input class="review__check" type="checkbox" id="rocks" name="rocks" value="rocks">
+            <label for="rocks" class="review__info">Красные скалы</label>
           </div>
         </fieldset>
         <fieldset class="review__group review__group--text">
