@@ -89,8 +89,15 @@
 }
 
 // пытаемся правильно разместить картинку
+picture {
+  display: block;
+  width: 100%;
+  height: min-content;
+}
+
 .advantage__item--city .advantage__image {
   object-fit: cover;
+  display: block;
 
   @media (min-width: @tablet-width) {
     width: 100%;
@@ -116,6 +123,7 @@
 .advantage__item--bridge .advantage__image {
   object-fit: cover;
   order: 2;
+  display: block;
 
   @media (min-width: @tablet-width) {
     width: 100%;
