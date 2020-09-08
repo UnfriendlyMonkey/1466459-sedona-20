@@ -34,6 +34,11 @@
 // Первая строка с фото и голубым фоном
 .advantage__item--city {
   position: relative;
+  width: 100%;
+
+  .advantage__description {
+    margin: 0;
+  }
   // Декоративный вырез из мобильной версии
   &::before {
     content: "";
@@ -41,9 +46,9 @@
     min-height: 37px;
     display: block;
     position: absolute;
-    top: 0;
+    top: -22px;
     left: 0;
-    background: url("../../img/white-angle-3-mobile.png") no-repeat center center;
+    background: url("../img/white-angle-3-mobile.png") no-repeat center center;
     // background-size: cover;
     z-index: 2;
   }
@@ -57,6 +62,10 @@
     &::before {
       display: none;
     }
+
+    .advantage__number {
+      margin-top: -9px;
+    }
   }
 }
 
@@ -66,21 +75,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 72px 12px 40px 12px;
-  min-height: 227px;
-  // Это костыль. иначе они сейчас расползаются шире назначенной высоты, не пойму, почему
-  .advantage__title {
-    color: @max-white;
-    margin: 0;
-  }
-
-  .advantage__description {
-    margin: 0;
-  }
+  padding: 50px 12px 40px 12px;
+  margin: 0;
+  min-height: 205px;
 
   @media (min-width: @tablet-width) {
-    height: 256px;
-    padding: 40px 36px 40px 36px;
+    min-height: 256px;
+    padding: 40px 30px 45px 30px;
   }
 
   @media (min-width: @desktop-width) {
@@ -88,7 +89,11 @@
   }
 }
 
-// пытаемся правильно разместить картинку
+.advantage__title--white {
+  color: @max-white;
+  margin: 0;
+}
+
 picture {
   display: block;
   width: 100%;
@@ -98,6 +103,7 @@ picture {
 .advantage__item--city .advantage__image {
   object-fit: cover;
   display: block;
+  width: 100%;
 
   @media (min-width: @tablet-width) {
     width: 100%;
@@ -110,20 +116,29 @@ picture {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+
+  .advantage__description {
+    margin: 0;
+  }
 
   @media (min-width: @tablet-width) {
     grid-column-start: 1;
     grid-column-end: -1;
     display: grid;
     grid-template-columns: 2fr 1fr;
+
+    .advantage__number {
+      margin-top: -9px;
+    }
   }
 }
-
 
 .advantage__item--bridge .advantage__image {
   object-fit: cover;
   order: 2;
   display: block;
+  width: 100%;
 
   @media (min-width: @tablet-width) {
     width: 100%;
@@ -141,20 +156,11 @@ picture {
   padding: 39px 20px 35px 20px;
   min-height: 191px;
   order: -1;
-
-
-  .advantage__title {
-    color: @max-white;
-    margin: 0;
-  }
-
-  .advantage__description {
-    margin: 0;
-  }
+  margin: 0;
 
   @media (min-width: @tablet-width) {
-    padding: 40px 36px 40px 36px;
-    height: 256px;
+    padding: 43px 36px 41px 36px;
+    min-height: 256px;
     order: 2;
   }
 
@@ -163,23 +169,22 @@ picture {
   }
 }
 
-//  Приходится дублировать паддинги, т.к. они везде разные
-
 //  Полоса с неномерными преимуществами и пиктограммами
 
 .advantage__pics-list {
   .list-not;
   background-color: @max-white;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
   @media (max-width: @mobile-width-only) {
     display: grid;
-    grid-template-rows: 105px 84px 105px;
-    row-gap: 26px;
+    // grid-template-rows: 105px 84px 105px;
+    row-gap: 15px;
     // height: 416px;
-    padding-top: 35px;
-    padding-bottom: 30px;
+    padding-top: 25px;
+    // padding-bottom: 30px;
+    max-width: 450px;
+    align-self: center;
+    margin: 0 auto;
+    margin-bottom: 37px;
   }
 
   @media (min-width: @tablet-width) {
@@ -193,18 +198,22 @@ picture {
 .advantage__pics-item {
   background-color: @max-white;
   color: @main-text;
+  padding-top: 10px;
   padding-left: 70px;
+  padding-right: 20px;
   text-align: left;
-  min-height: 138px;
+  max-width: 500px;
+  // min-height: 138px;
 
   .advantage__title {
     text-align: left;
     margin-top: 0;
+    margin-bottom: 16px;
   }
 
   @media (min-width: @tablet-width) {
     text-align: center;
-    padding: 155px 36px 45px 36px;
+    padding: 158px 41px 58px 41px;
 
     .advantage__title {
       text-align: center;
@@ -226,11 +235,11 @@ picture {
 .advantage__pics-item--housing {
   background-image: url("../img/icon-house.svg");
   background-repeat: no-repeat;
-  background-position: 8% -10%;
-  background-size: 40px 40px;
+  background-position: 21px 1px;
+  background-size: 39px 37px;
 
   @media (min-width: @tablet-width) {
-    background-position: 50% 55px;
+    background-position: 50% 60px;
     background-size: 75px 72px;
   }
 }
@@ -241,13 +250,15 @@ picture {
   flex-basis: 84px;
   background-image: url("../img/icon-gift.svg");
   background-repeat: no-repeat;
-  background-position: 8% -10%;
+  background-position: 25px 0;
   background-size: 32px 38px;
 
   @media (min-width: @tablet-width) {
     order: 3;
-    background-position: 50% 55px;
-    background-size: 76px 75px;
+    background-position: 50% 57px;
+    background-size: 64px 75px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -258,33 +269,40 @@ picture {
   flex-grow: 0;
   background-image: url("../img/icon-burger.svg");
   background-repeat: no-repeat;
-  background-position: 7% -5%;
+  background-position: 18px 7px;
   background-size: 40px 35px;
 
   @media (min-width: @tablet-width) {
     order: 2;
-    background-position: 50% 55px;
-    background-size: 70px 80px;
+    background-position: 50% 63px;
+    background-size: 76px 68px;
   }
 }
 
 .advantage__item--grey {
   background-color: @bg-3-5;
-  padding: 5px 30px 40px 30px;
+  padding: 25px 35px 10px 35px;
 
   @media (max-width: @mobile-width-only) {
     width: 100%;
-    max-height: 167px;
+    min-height: 168px;
     position: relative;
-    // Поколдовать еще с высотой строк не могу их пока выровнять
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+
+    .advantage__title {
+      margin: 0;
+    }
+
+    .advantage__number {
+      margin-top: 9px;
+    }
   }
 
   @media (min-width: @tablet-width) {
-    height: 256px;
-    padding: 15px 33px 40px 33px;
+    min-height: 256px;
+    padding: 21px 33px 27px 33px;
     align-self: stretch;
   }
 
@@ -293,23 +311,26 @@ picture {
   }
 }
 
-.advantage__item--grey::after {
+.advantage__item--grey {
+  &::after {
   content: "";
-  width: 280px;
+  width: 88%;
   height: 1px;
   display: block;
   position: absolute;
   bottom: 0;
-  left: calc((100% - 280px) / 2);
+  left: 6%;
   background-color: @deviders-bg;
+  }
 
-  &:last-of-type::after {
+  &:last-child::after {
     display: none;
-    /// i'm giving up as of now - don't know how to remove the last line in this row
   }
 
   @media (min-width: @tablet-width) {
-    display: none;
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -324,6 +345,6 @@ picture {
   }
 
   .advantage__item--grey .advantage__description {
-    margin-top: 22px;
+    margin-top: 23px;
   }
 }
