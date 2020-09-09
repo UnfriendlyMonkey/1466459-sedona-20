@@ -67,8 +67,8 @@
         <div class="intro__picture-wrapper">
           <img class="intro__picture" src="img/text-sedona.svg" width="229" height="39" alt="Welcome to Sedona!">
         </div>
-        <h2 class="intro__headline">Оставьте свой отзыв</h2>
-        <p class="intro__description">Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных Вами достопримечательностях</p>
+        <h2 class="intro__headline intro__headline--form">Оставьте свой отзыв</h2>
+        <p class="intro__description intro__description--form">Помогите нашим отелям стать лучше! Оставьте отзыв о них, а&nbsp;также о посещенных Вами достопримечательностях</p>
       </section>
 
       <form class="review" action="https://echo.htmlacademy.ru/courses" method="get">
@@ -76,64 +76,50 @@
           <legend class="review__legend">Представьтесь:</legend>
             <label>
               <span class="review__description">Имя*:</span>
-              <input class="review__input" type="text" name="username" placeholder="Петр" required>
+              <input class="review__input review__input--username" type="text" name="username" value="Петр" required>
             </label>
             <label>
               <span class="review__description">Фамилия*:</span>
-              <input class="review__input" type="text" name="surname" placeholder="Иванов" required>
+              <input class="review__input review__input--surname" type="text" name="surname" value="Иванов" required>
             </label>
             <label>
               <span class="review__description">Отчество:</span>
-              <input class="review__input" type="text" name="fathersname" placeholder="Александрович">
+              <input class="review__input review__input--fathersname" type="text" name="fathersname" value="Александрович">
             </label>
         </fieldset>
         <fieldset class="review__group review__group--contact">
           <legend class="review__legend">Контактная информация:</legend>
           <div class="review__contact-container">
-            <label>
+            <label class="review__phone">
               <span class="review__description"><span class="review__opt">Контактный </span>телефон*:</span>
-              <input class="review__input" type="tel" name="phone" required placeholder="Введите телефон">
+              <input class="review__input" type="tel" name="phone" required value="Введите телефон">
             </label>
-            <label>
-              <span class="review__description">Электронная почта*:</span>
-              <input class="review__input" type="email" name="email" required placeholder="Введите e-mail">
+            <label class="review__email">
+              <span class="review__description review__description--email">Электронная почта*:</span>
+              <input class="review__input" type="email" name="email" required value="Введите e-mail">
             </label>
           </div>
         </fieldset>
         <fieldset class="review__group review__group--impression">
           <legend class="review__legend">Ваше общее впечатление:</legend>
-            <label>
-              <input class="review__radio" type="radio" name="impression" value="ok" checked>
-              <span class="review__info">Скорее положительное</span>
-            </label>
-            <label>
-              <input class="review__radio" type="radio" name="impression" value="no">
-              <span class="review__info">Скорее отрицательное</span>
-            </label>
-            <label>
-              <input class="review__radio" type="radio" name="impression" value="dn">
-              <span class="review__info">Затрудняюсь ответить</span>
-            </label>
+            <input class="review__radio" type="radio" name="impression" id="ok" value="ok" checked>
+            <label for="ok" class="review__info">Скорее положительное</label>
+            <input class="review__radio" type="radio" name="impression" id="no" value="no">
+            <label for="no" class="review__info">Скорее отрицательное</label>
+            <input class="review__radio" type="radio" name="impression" id="dn" value="dn">
+            <label for="dn" class="review__info">Затрудняюсь ответить</label>
         </fieldset>
         <fieldset class="review__group review__group--visited">
           <legend class="review__legend">Посещенные достопримечательности:</legend>
           <div class="review__check-container">
-            <label>
-              <input class="review__check" type="checkbox" name="bridge" value="bridge" checked>
-              <span class="review__info">Мост Дьявола</span>
-            </label>
-            <label>
-              <input class="review__check" type="checkbox" name="bell" value="bell" checked>
-              <span class="review__info">Гора-Колокол</span>
-            </label>
-            <label>
-              <input class="review__check" type="checkbox" name="park" value="park" checked>
-              <span class="review__info">Слайд-парк</span>
-            </label>
-            <label>
-              <input class="review__check" type="checkbox" name="rocks" value="rocks">
-              <span class="review__info">Красные скалы</span>
-            </label>
+            <input class="review__check" type="checkbox" id="bridge" name="bridge" value="bridge" checked>
+            <label for="bridge" class="review__info">Мост Дьявола</label>
+            <input class="review__check" type="checkbox" id="bell" name="bell" value="bell" checked>
+            <label for="bell" class="review__info">Гора-Колокол</label>
+            <input class="review__check" type="checkbox" id="park" name="park" value="park" checked>
+            <label for="park" class="review__info">Слайд-парк</label>
+            <input class="review__check" type="checkbox" id="rocks" name="rocks" value="rocks">
+            <label for="rocks" class="review__info">Красные скалы</label>
           </div>
         </fieldset>
         <fieldset class="review__group review__group--text">
@@ -157,25 +143,29 @@
           <li>
             <a class="social-media__button" href="#">
             <span class="visually-hidden">Twitter</span>
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.95 1.14403C12.635 0.648028 13.934 1.41403 14.527 2.32303C15.2 2.09203 15.858 1.84203 16.538 1.61503C16.5249 2.30139 16.2117 2.94755 15.681 3.38303C16.366 3.55303 16.985 2.89203 16.985 2.89203C16.816 3.89203 15.979 4.68003 15.422 4.91603C15.191 11.666 12.247 16.133 5.34498 15.998H4.89898C4.48898 15.998 0.734977 15.538 0.000976562 14.111C2.27198 14.307 3.89398 13.689 4.69398 12.934C3.73398 12.634 2.01498 12.457 1.71498 9.98403C2.06398 10.09 2.27898 10.212 2.90498 10.103C1.70498 9.24703 0.373977 8.53003 0.447977 6.33003C0.732977 6.65803 1.51498 6.86603 1.78798 6.80203C1.08498 6.56103 -0.182023 3.44203 0.893977 1.85003C2.71198 3.70403 4.62898 5.45603 8.04598 5.62303C8.25398 3.33003 9.18298 1.79303 10.95 1.14403Z"/>
-            </svg>
+              <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.5px" height="14.663px" viewBox="0 0 17.5 14.663" enable-background="new 0 0 17.5 14.663" xml:space="preserve">
+                <g id="W6EeEF_1_">
+                  <g>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.283,0.153c1.736-0.484,3.074,0.264,3.685,1.15 c0.694-0.225,1.372-0.47,2.072-0.69c-0.004,0.841-0.538,1.478-0.883,1.728C16.861,2.506,17.5,1.86,17.5,1.86 c-0.175,0.977-1.035,1.746-1.611,1.977C15.65,10.429,12.617,14.793,5.507,14.66c-0.538,0,0.077,0-0.46,0 c-0.422,0-4.29-0.45-5.047-1.843c2.341,0.192,4.011-0.412,4.835-1.15c-0.989-0.293-2.761-0.464-3.07-2.881 c0.362,0.105,0.583,0.223,1.228,0.117C1.757,8.067,0.385,7.366,0.461,5.218c0.294,0.319,1.1,0.523,1.381,0.461 c-0.725-0.235-2.03-3.281-0.921-4.836C2.794,2.655,4.769,4.364,8.29,4.528C8.506,2.288,9.461,0.788,11.283,0.153z"/>
+                  </g>
+                </g>
+              </svg>
             </a>
           </li>
           <li>
             <a class="social-media__button" href="#">
             <span class="visually-hidden">Facebook</span>
-            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z"/>
+            <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="8.672px" height="18.944px" viewBox="0 0 8.672 18.944" enable-background="new 0 0 8.672 18.944" xml:space="preserve">
+              <path d="M6.275,3.356c0.799,0,1.599,0,2.398,0c0-1.119,0-2.237,0-3.356c-0.959,0-1.92,0-2.878,0C2.656,0.181,1.54,2.387,1.948,6.114 H0v3.518h1.959c0,3.104,0,6.208,0,9.312c1.279,0,2.559,0,3.837,0c0-3.104,0-6.208,0-9.312h2.857V6.114H5.787 C5.765,5.069,5.75,3.709,6.275,3.356z"/>
             </svg>
             </a>
           </li>
           <li>
             <a class="social-media__button" href="#">
             <span class="visually-hidden">YouTube</span>
-            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z"/>
-            </svg>
+              <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.979px" height="14.015px" viewBox="0 0 19.979 14.015" enable-background="new 0 0 19.979 14.015" xml:space="preserve">
+                <path d="M17.145,0H2.835C1.275,0,0,1.275,0,2.835v8.345c0,1.56,1.275,2.835,2.835,2.835h14.31c1.56,0,2.835-1.275,2.835-2.835V2.835 C19.979,1.275,18.704,0,17.145,0z M7.036,10.392V3.623l6.769,3.384L7.036,10.392z"/>
+              </svg>
             </a>
           </li>
         </ul>

@@ -1,17 +1,21 @@
 .main-nav {
   width: 100%;
   background-color: @blue-light;
+  background-image: url("../img/mobile-menu-darkening.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
   order: 1;
 
   @media (min-width: @tablet-width) {
     background-color: @max-white;
+    background-image: none;
   }
 }
 
 .main-nav__close {
   position: absolute;
-  top: 17px;
-  right: 20px;
+  top: 18px;
+  right: 19px;
   margin: 0;
   padding: 0;
   font-size: 0;
