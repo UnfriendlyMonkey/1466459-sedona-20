@@ -64,9 +64,10 @@
 
 .review__input {
   .headings-mobile;
-  text-align: left;
+  font-family: "PT Sans", "Arial", sans-serif;text-align: left;
   text-transform: none;
-  padding-left: 22px;
+  padding-left: 18px;
+  padding-right: 5px;
   background-color: @bg-light;
   min-height: 58px;
   border: 4px solid @bg-light;
@@ -81,13 +82,6 @@
     border: 4px solid @bg-medium-v2;
     outline: none;
   }
-}
-
-.review__input::placeholder,
-.review__input::-webkit-input-placeholder,
-.review__input::-moz-placeholder {
-  color: @max-black;
-  //разобраться с цветом плейсхолдера
 }
 
 .review__info {
@@ -113,7 +107,7 @@
   }
 
   .review__input {
-    margin-left: 13px;
+    margin-left: 14px;
     flex-shrink: 1;
   }
 
@@ -325,7 +319,7 @@
       min-width: 257px;
       flex-grow: 1;
       // flex-shrink: 0;
-      margin-left: 15px;
+      margin-left: 17px;
       margin-top: 6px;
     }
 
@@ -505,6 +499,10 @@
 
     label {
       margin: 0;
+
+      &::before {
+        border-radius: 0;
+      }
     }
 
     label:first-child {

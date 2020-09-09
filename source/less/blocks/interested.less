@@ -1,10 +1,10 @@
 .interested {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
   text-align: center;
   min-height: 287px;
-  padding: 32px 20px 50px 20px;
+  padding: 34px 20px 50px 20px;
   margin: 0 auto;
   background-color: @max-white;
 
@@ -23,10 +23,12 @@
 .interested__intro {
   .headings-desktop;
   margin: 0;
+  margin-bottom: 21px;
 
   @media (min-width: @tablet-width) {
     font-size: 30px;
     line-height: 26px;
+    margin-bottom: 33px;
   }
 }
 
@@ -34,13 +36,25 @@
   .main-text-mobile;
   line-height: 24px;
   margin: 0;
-  margin-top: -5px;
+  margin-bottom: 27px;
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 39px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 44px;
+  }
 }
 
 .interested__find {
   display: inline-block;
   vertical-align: middle;
   padding-top: 15px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
 }
 
 .no-mobile-brake {
