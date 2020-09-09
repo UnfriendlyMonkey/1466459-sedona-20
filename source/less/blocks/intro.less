@@ -147,7 +147,7 @@
 
   @media (min-width: @tablet-width) {
     padding-top: 55px;
-    padding-bottom: 32px;
+    padding-bottom: 33px;
   }
 
   @media (min-width: @desktop-width) {
@@ -169,6 +169,10 @@
   line-height: 26px;
   text-align: center;
 
+  @media (max-width: @mobile-width-only) {
+    max-width: 500px;
+  }
+
   @media (min-width: @tablet-width) {
     margin: 0;
     padding: 0 140px 55px 140px;
@@ -176,20 +180,21 @@
   }
 
   @media (min-width: @desktop-width) {
-    padding: 0 358px 41px 358px;
+    padding: 0 358px 43px 358px;
     max-width: 1200px;
   }
 }
 
 .intro__description--photo {
-  padding-bottom: 33px;
+  margin-bottom: 38px;
+  line-height: 24px;
 
   @media (min-width: @tablet-width) {
-    padding-bottom: 82px;
+    padding-bottom: 48px;
   }
 
   @media (min-width: @desktop-width) {
-    padding-bottom: 78px;
+    padding-bottom: 42px;
   }
 }
 

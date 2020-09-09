@@ -30,7 +30,7 @@
 
 .photos__item {
   margin: 0;
-  padding: 22px 20px 15px 20px;
+  padding: 22px 20px 16px 20px;
   position: relative;
   // display: block;
 
@@ -106,14 +106,14 @@ picture {
 
 .photos__description {
   @media (max-width: @mobile-width-only) {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    // padding-bottom: 5px;
   }
 
   @media (min-width: @tablet-width) {
     height: 80px;
     min-width: 324px;
-    padding: 15px 20px 15px 20px;
+    padding: 15px 19px 15px 22px;
     display: grid;
     grid-template-columns: auto min-content;
     background-color: @bg-light;
@@ -171,10 +171,11 @@ picture {
   min-width: 70px;
 
   @media (max-width: @mobile-width-only) {
-    padding-top: 10px;
+    padding-top: 15px;
   }
 
   @media (min-width: @tablet-width) {
+    min-width: 65px;
     justify-content: flex-end;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -216,6 +217,10 @@ picture {
   color: @max-black;
   padding-left: 14px;
   flex-grow: 1;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 9px;
+  }
 
   @media (min-width: @desktop-width) {
     color: @max-white;
