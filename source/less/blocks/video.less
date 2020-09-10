@@ -159,11 +159,19 @@
 .video__button--replay {
   width: 16px;
   height: 20px;
-  // background-image: url("../img/icon-video-replay.svg");
 }
 
 .video__button--replay svg {
   fill: @video-buttons-dark;
+
+  &:hover,
+  &:focus {
+    fill: @main-text;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .video__button--subtitles {
@@ -173,7 +181,20 @@
 }
 
 .video__button--subtitles svg {
-  fill: @video-buttons-dark;
+  path {
+    fill: @video-buttons-dark;
+  }
+
+  &:hover,
+  &:focus {
+    path {
+      fill: @main-text;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .video__button--fullscreen {
@@ -183,22 +204,77 @@
 }
 
 .video__button--fullscreen svg {
-  fill: @video-buttons-dark;
+  polygon {
+    fill: @video-buttons-dark;
+  }
+
+  &:hover,
+  &:focus {
+    polygon {
+      fill: @main-text;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {
   .video__button--fullscreen svg {
-    stroke: @max-white;
-    fill: @max-white;
+    polygon {
+      fill: @max-white;
+    }
+
+    &:hover,
+    &:focus {
+      polygon {
+        fill: @max-white;
+      }
+      opacity: 0.6;
+    }
+
+    &:active {
+      polygon {
+        fill: @max-white;
+      }
+      opacity: 0.3;
+    }
   }
 
   .video__button--subtitles svg {
-    stroke: @max-white;
-    fill: @max-white;
+    path {
+      fill: @max-white;
+    }
+
+    &:hover,
+    &:focus {
+      path {
+        fill: @max-white;
+      }
+      opacity: 0.6;
+    }
+
+    &:active {
+      path {
+        fill: @max-white;
+      }
+      opacity: 0.3;
+    }
   }
 
   .video__button--replay svg {
     fill: @max-white;
-    stroke: @max-white;
+
+    &:hover,
+    &:focus {
+      fill: @max-white;
+      opacity: 0.6;
+    }
+
+    &:active {
+      fill: @max-white;
+      opacity: 0.3;
+    }
   }
 }
