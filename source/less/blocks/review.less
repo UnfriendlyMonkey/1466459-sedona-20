@@ -132,8 +132,6 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    // flex-grow: 1;
-    // Why it becomes 310px?? legend seems not to react to css grid & flex
 
     .review__legend {
       text-align: left;
@@ -179,9 +177,23 @@
       background-position: center center;
       background-repeat: no-repeat;
     }
+
+    &::after {
+      content: "";
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background-color: transparent;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
   }
 
-  input[type="radio"]:checked + label::before {
+  input[type="radio"]:checked + label::after {
     background-image: url("../img/icon-dot.svg");
   }
 
@@ -192,6 +204,10 @@
 
   input[type="radio"]:active + label::before {
     background-color: @bg-medium-v4;
+  }
+
+  input[type="radio"]:active + label::after {
+    opacity: 0.3;
   }
 
   .review__radio {
@@ -211,7 +227,6 @@
     justify-content: space-between;
     border-right: 1px solid @form-deviders;
     order: -1;
-    // flex-grow: 1;
 
     .review__legend {
       text-align: left;
@@ -279,7 +294,6 @@
     padding-top: 3px;
 
     .review__input {
-      // min-width: 648px;
       width: calc(100% - 58px);
       margin-top: 8px;
       margin-bottom: 25px;
@@ -423,9 +437,23 @@
       background-position: center center;
       background-repeat: no-repeat;
     }
+
+    &::after {
+      content: "";
+      width: 55px;
+      height: 55px;
+      border-radius: 5px;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background-color: transparent;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
   }
 
-  input[type="checkbox"]:checked + label::before {
+  input[type="checkbox"]:checked + label::after {
     background-image: url("../img/icon-tick.svg");
   }
 
@@ -438,9 +466,9 @@
     background-color: @bg-medium-v4;
   }
 
-  // input[type="checkbox"]:checked + label::before {
-  //   background-image: url("../../img/icon-tick.svg");
-  // }
+  input[type="checkbox"]:active + label::after {
+    opacity: 0.3;
+  }
 
   @media (min-width: @tablet-width) {
     margin-top: 12px;
