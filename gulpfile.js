@@ -11,17 +11,18 @@ const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
 const del = require("del");
-const posthtml = require("gulp-posthtml");
-const include = require("posthtml-include");
+// const posthtml = require("gulp-posthtml");
+// const include = require("posthtml-include");
 
-// Copy to build folder
+// Build process
 
 const copy = () => {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
     "source/js/**",
-    "source/*.ico"
+    "source/*.ico",
+    "source/*.html"
   ], {
     base: "source"
   })
@@ -36,7 +37,7 @@ const clean = () => {
 
 exports.clean = clean;
 
-const build = () => gulp.series(
+const build = gulp.series(
   "clean",
   "copy",
   "styles",
