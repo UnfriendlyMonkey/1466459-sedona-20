@@ -108,8 +108,12 @@
 .advantage__image-wrapper {
   display: block;
   width: 100%;
-  min-height: 256px;
+  min-height: 260px;
   position: relative;
+
+  @media (min-width: @tablet-width) {
+    min-height: 256px;
+  }
 }
 
 .advantage__image {

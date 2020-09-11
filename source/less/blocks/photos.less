@@ -199,40 +199,28 @@ picture {
   flex-grow: 0;
 }
 
-.photos__voter svg {
-  path {
-    fill: @black-transparent;
-  }
+.photos__icon-like {
+  fill: @black-transparent;
 
   &:hover,
   &:focus {
-    path {
-      fill: @max-black;
-    }
+    fill: @max-black;
   }
 
   &:active {
-    path {
-      fill: @blue-light;
-    }
+    fill: @blue-light;
   }
 
   @media (min-width: @desktop-width) {
-    path {
-      fill: @max-white;
-    }
+    fill: @max-white;
 
     &:hover,
     &:focus {
-      path {
-        fill: @white-transparent;
-      }
+      fill: @white-transparent;
     }
 
     &:active {
-      path {
-        fill: @blue-light;
-      }
+      fill: @blue-light;
     }
   }
 }

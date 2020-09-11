@@ -161,7 +161,19 @@
   height: 20px;
 }
 
-.video__button--replay svg {
+.video__button--subtitles {
+  margin-left: auto;
+  width: 32px;
+  height: 20px;
+}
+
+.video__button--fullscreen {
+  margin-left: 29px;
+  width: 23px;
+  height: 23px;
+}
+
+.video__icon {
   fill: @video-buttons-dark;
 
   &:hover,
@@ -172,98 +184,8 @@
   &:active {
     opacity: 0.3;
   }
-}
 
-.video__button--subtitles {
-  margin-left: auto;
-  width: 32px;
-  height: 20px;
-}
-
-.video__button--subtitles svg {
-  path {
-    fill: @video-buttons-dark;
-  }
-
-  &:hover,
-  &:focus {
-    path {
-      fill: @main-text;
-    }
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-}
-
-.video__button--fullscreen {
-  margin-left: 29px;
-  width: 23px;
-  height: 23px;
-}
-
-.video__button--fullscreen svg {
-  polygon {
-    fill: @video-buttons-dark;
-  }
-
-  &:hover,
-  &:focus {
-    polygon {
-      fill: @main-text;
-    }
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-}
-
-@media (min-width: @tablet-width) {
-  .video__button--fullscreen svg {
-    polygon {
-      fill: @max-white;
-    }
-
-    &:hover,
-    &:focus {
-      polygon {
-        fill: @max-white;
-      }
-      opacity: 0.6;
-    }
-
-    &:active {
-      polygon {
-        fill: @max-white;
-      }
-      opacity: 0.3;
-    }
-  }
-
-  .video__button--subtitles svg {
-    path {
-      fill: @max-white;
-    }
-
-    &:hover,
-    &:focus {
-      path {
-        fill: @max-white;
-      }
-      opacity: 0.6;
-    }
-
-    &:active {
-      path {
-        fill: @max-white;
-      }
-      opacity: 0.3;
-    }
-  }
-
-  .video__button--replay svg {
+  @media (min-width: @tablet-width) {
     fill: @max-white;
 
     &:hover,
