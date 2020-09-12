@@ -12,17 +12,17 @@ var failureButton = popupFailure.querySelector(".popup__button")
 
 
 window.onload = function() {
-   	if (popupSuccess.classList.contains("popup--active")) {
-   		popupSuccess.classList.remove("popup--active");
-    }
-    if (popupFailure.classList.contains("popup--active")) {
-      popupFailure.classList.remove("popup--active");
-      reviewForm.classList.remove("review--error");
-    }
-    inputUsername.removeAttribute("required");
-    inputSurname.removeAttribute("required");
-    inputPhone.removeAttribute("required");
-    inputEmail.removeAttribute("required");
+  if (popupSuccess.classList.contains("popup--active")) {
+    popupSuccess.classList.remove("popup--active");
+  }
+  if (popupFailure.classList.contains("popup--active")) {
+    popupFailure.classList.remove("popup--active");
+    reviewForm.classList.remove("review--error");
+  }
+  inputUsername.removeAttribute("required");
+  inputSurname.removeAttribute("required");
+  inputPhone.removeAttribute("required");
+  inputEmail.removeAttribute("required");
 };
 
 reviewForm.addEventListener("submit", function (evt) {
@@ -62,5 +62,3 @@ window.addEventListener("keydown", function (evt) {
       }
     }
 });
-
-
