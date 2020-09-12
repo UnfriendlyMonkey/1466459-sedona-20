@@ -1,17 +1,16 @@
 .map {
-  display: block;
   width: 100%;
-  min-height: 350px;
+  height: 350px;
   background-color: transparent;
   background-image: url("../img/bg-map-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: top center;
-  margin: 0 auto;
+  margin: 0;
   position: relative;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/bg-map-mobile@2x.jpg");
-    background-size: 320px auto;
+    background-size: auto 350px;
   }
 
   @media (min-width: @tablet-width) {
@@ -19,7 +18,7 @@
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/bg-map-tablet@2x.jpg");
-      background-size: 768px auto;
+      background-size: auto 350px;
     }
   }
 
@@ -28,14 +27,9 @@
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/bg-map-desktop@2x.jpg");
-      background-size: 1200px auto;
+      background-size: 1200px 350px;
     }
   }
-}
-
-.map__container {
-  position: relative;
-  width: 100%;
 
   &::before {
     content: "";
@@ -48,11 +42,17 @@
     border-radius: 50%;
     left: 45%;
     top: 46%;
-    z-index: 10;
+    z-index: 1;
 
     @media (min-width: @tablet-width) {
       top: 47%;
       left: 48%;
     }
   }
+}
+
+.map iframe {
+  position: relative;
+  z-index: 2;
+  border: none;
 }
