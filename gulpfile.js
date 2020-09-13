@@ -11,6 +11,9 @@ const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
 const del = require("del");
+const htmlmin = require("gulp-htmlmin");
+const uglify = require("gulp-uglify");
+// var minify = require('html-minifier-terser').minify;
 
 // Moving files to build folder
 
@@ -38,6 +41,14 @@ const copyhtml = () => {
 };
 
 exports.copyhtml = copyhtml;
+
+const htmlminify = () => {
+  return gulp.src("build/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"))
+};
+
+exports.htmlminify = htmlminify;
 
 const copysprite = () => {
   return gulp.src("source/img/sprite.svg",
@@ -87,7 +98,15 @@ const sprite = () => {
 
 exports.sprite = sprite;
 
-// Styles
+// Minification
+
+const jsmin = () => {
+  return gulp.src("source/js/**/*.js")
+    .pipe(uglify())
+    .pipe(gulp.dest("build/js"))
+};
+
+exports.jsmin = jsmin;
 
 const styles = () => {
   return gulp.src("source/less/style.less")
@@ -126,14 +145,17 @@ exports.server = server;
 
 const watcher = () => {
   gulp.watch("source/less/**/*.less", gulp.series("styles"));
-  gulp.watch("source/*.html").on("change", gulp.series(copyhtml, sync.reload));
+  gulp.watch("source/*.html").on("change", gulp.series(copyhtml, htmlminify, sync.reload));
+  gulp.watch("source/js/**/*.js").on("change", gulp.series("jsmin"));
 }
 
 const build = gulp.series(
   clean,
   copy,
   copyhtml,
+  htmlminify,
   styles,
+  jsmin,
   images,
   // copysprite,
   sprite,
