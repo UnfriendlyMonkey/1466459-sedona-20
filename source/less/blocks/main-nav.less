@@ -5,11 +5,17 @@
   background-position: bottom;
   background-repeat: repeat-x;
   order: 1;
+  display: none;
 
   @media (min-width: @tablet-width) {
     background-color: @max-white;
     background-image: none;
+    display: block;
   }
+}
+
+.main-nav--appear {
+  display: block;
 }
 
 .main-nav__close {
